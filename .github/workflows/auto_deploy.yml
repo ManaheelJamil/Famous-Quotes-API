@@ -24,12 +24,12 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Installing Node
-        uses: actions/checkout@v3
+        uses: actions/setup-node@v2-beta
         with: 
           node-version: 18.14.2  
 
        # Runs a set of commands using the runners shell
       - name: Installing surge
         run:  npm install --global surge
-      -  name: deploying using surge
-         run: surge ./ https://famous-qoutes-api.surge.sh/ --token ${{ secrets.SURGE_TOKEN }}
+      - name: deploying using surge
+        run: surge ./ https://famous-quotes-api.surge.sh/ --token ${{ secrets.SURGE_TOKEN }}
